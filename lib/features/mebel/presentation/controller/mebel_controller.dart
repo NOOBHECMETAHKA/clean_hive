@@ -56,6 +56,24 @@ class MebelController with ChangeNotifier {
     notifyListeners();
   }
 
+  Future<void> updatMebel(String article, String name, String category,
+      String description, double? price, int? count) async {
+    price = price ?? 0;
+    count = count ?? 0;
+
+    MebelEntity entity = MebelEntity(
+        article: article,
+        name: name,
+        category: category,
+        description: description,
+        price: price,
+        count: count);
+        
+    await _repo.updateMebel(entity);
+    init();
+    notifyListeners();
+  }
+
   Future<void> deleteMebel(MebelEntity entity) async {
     await _repo.deleteMebel(entity);
     init();

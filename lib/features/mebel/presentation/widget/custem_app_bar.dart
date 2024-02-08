@@ -13,8 +13,6 @@ class CustemAppBar extends StatelessWidget implements PreferredSizeWidget {
         IconButton(onPressed: () {
           AppRouter.router.goNamed(Pages.addProduct.screenName);
         }, icon: const Icon(Icons.add)),
-        IconButton(onPressed: () {
-        }, icon: const Icon(Icons.settings)),
       ],
     );
   }

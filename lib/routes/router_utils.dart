@@ -2,7 +2,7 @@ enum Pages {
   home,
   addProduct,
   aboutProduct,
-  settings,
+  updateProduct,
 }
 
 extension AppPageExtension on Pages {
@@ -11,16 +11,16 @@ extension AppPageExtension on Pages {
       Pages.home => '/',
       Pages.addProduct => 'product-add',
       Pages.aboutProduct => 'product-about',
-      Pages.settings => 'settings',
+      Pages.updateProduct => 'product-update'
     };
   }
 
   String get screenName {
     return switch (this) {
       Pages.home => 'HOME',
+      Pages.updateProduct => "PRODUCTUPDATEFORM",
       Pages.addProduct => 'PRODUCTADDFORM',
       Pages.aboutProduct => 'ABOURPRODUCT',
-      Pages.settings => 'SETTINGS',
     };
   }
 }

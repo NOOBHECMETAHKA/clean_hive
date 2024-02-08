@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mebel_shop_hive/features/mebel/presentation/controller/mebel_controller.dart';
 import 'package:mebel_shop_hive/features/mebel/presentation/widget/mebel_page.dart';
+import 'package:mebel_shop_hive/routes/app_router.dart';
+import 'package:mebel_shop_hive/routes/router_utils.dart';
 import 'package:provider/provider.dart';
 
 class AboutMebel extends StatelessWidget {
@@ -10,6 +12,9 @@ class AboutMebel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Инфа"), actions: [
+        IconButton(onPressed: (){
+          AppRouter.router.goNamed(Pages.updateProduct.screenName);
+        }, icon: const Icon(Icons.edit)),
         IconButton(
             onPressed: () {
               if (context.read<MebelController>().getSavedObjectMebel != null) {

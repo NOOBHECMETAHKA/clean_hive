@@ -23,7 +23,7 @@ class MebelPage extends StatelessWidget {
             ],
           ),
           child: Table(
-            border: TableBorder.all(color: Colors.black),
+            border: TableBorder.all(color: Colors.black, borderRadius: BorderRadius.circular(10.0)),
             children: [
               TableRow(children: [
                 const TableCell(
@@ -60,15 +60,3 @@ class MebelPage extends StatelessWidget {
     );
   }
 }
-
-/**
- * Text("Наименование: ${context.read<MebelController>().getSavedObjectMebel!.name}"),
-          const Divider(color: Colors.grey),
-          Text("Описание: ${context.read<MebelController>().getSavedObjectMebel!.description}"),
-          const Divider(color: Colors.grey),
-          Text("Категория: ${context.read<MebelController>().getSavedObjectMebel!.category}"),
-          const Divider(color: Colors.grey),
-          Text("Количество: ${context.read<MebelController>().getSavedObjectMebel!.count} штук"),
-          const Divider(color: Colors.grey),
-          Text("Цена: ${context.read<MebelController>().getSavedObjectMebel!.price} рублей"),
- */
