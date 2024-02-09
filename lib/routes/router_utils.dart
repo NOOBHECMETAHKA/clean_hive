@@ -3,6 +3,7 @@ enum Pages {
   addProduct,
   aboutProduct,
   updateProduct,
+  selectedProducts,
 }
 
 extension AppPageExtension on Pages {
@@ -11,7 +12,8 @@ extension AppPageExtension on Pages {
       Pages.home => '/',
       Pages.addProduct => 'product-add',
       Pages.aboutProduct => 'product-about',
-      Pages.updateProduct => 'product-update'
+      Pages.updateProduct => 'product-update',
+      Pages.selectedProducts => 'product-selected'
     };
   }
 
@@ -21,6 +23,7 @@ extension AppPageExtension on Pages {
       Pages.updateProduct => "PRODUCTUPDATEFORM",
       Pages.addProduct => 'PRODUCTADDFORM',
       Pages.aboutProduct => 'ABOURPRODUCT',
+      Pages.selectedProducts => 'PRODUCTSELECTED'
     };
   }
 }

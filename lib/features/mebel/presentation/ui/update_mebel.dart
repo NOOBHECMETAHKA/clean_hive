@@ -40,7 +40,7 @@ class _UpdateMebelState extends State<UpdateMebel> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Добавление мебели")),
+      appBar: AppBar(title: const Text("Изменение мебели")),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           if (!_keyForm.currentState!.validate()) return;

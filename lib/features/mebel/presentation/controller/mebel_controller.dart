@@ -15,8 +15,12 @@ class MebelController with ChangeNotifier {
   MebelController(this._repo);
 
   final MebelRepository _repo;
+
   List<MebelEntity> _mebelList = [];
   List<MebelEntity> get getMebelList => _mebelList;
+
+  List<MebelEntity> _selectedMebels = [];
+  List<MebelEntity> get getSelectedMebels => _selectedMebels;
 
   MebelEntity? _savedObjectMebel;
   MebelEntity? get getSavedObjectMebel => _savedObjectMebel;
@@ -68,7 +72,7 @@ class MebelController with ChangeNotifier {
         description: description,
         price: price,
         count: count);
-        
+
     await _repo.updateMebel(entity);
     init();
     notifyListeners();
@@ -77,6 +81,19 @@ class MebelController with ChangeNotifier {
   Future<void> deleteMebel(MebelEntity entity) async {
     await _repo.deleteMebel(entity);
     init();
+    notifyListeners();
+  }
+
+  //Filter chip
+  void insertSelectedMebel(int index) {
+    if(_selectedMebels.where((element) => element.name == _mebelList[index].name).isEmpty){
+      _selectedMebels.add(_mebelList.elementAt(index));
+    }
+    notifyListeners();
+  }
+
+  void deleteSelectedMebel(int index) {
+    _selectedMebels.removeAt(index);
     notifyListeners();
   }
 }

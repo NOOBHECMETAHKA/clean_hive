@@ -6,17 +6,21 @@ import 'package:provider/provider.dart';
 
 class MebelCard extends StatelessWidget {
   final int index;
+  
+  final VoidCallback onTap;
 
-  const MebelCard({super.key, required this.index});
+  const MebelCard({super.key, required this.index, required this.onTap});
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      onTap: onTap,
       title: Text(context.read<MebelController>().getMebelList[index].name),
       subtitle: Text(
           "Количество: ${context.read<MebelController>().getMebelList[index].count}"),
       trailing: IconButton.outlined(
           onPressed: () {
-            context.read<MebelController>().setSavedMebel(context.read<MebelController>().getMebelList[index]);
+            context.read<MebelController>().setSavedMebel(
+                context.read<MebelController>().getMebelList[index]);
             AppRouter.router.goNamed(Pages.aboutProduct.screenName);
           },
           icon: const Icon(Icons.apps_sharp)),

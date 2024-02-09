@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mebel_shop_hive/di/service.dart';
 import 'package:mebel_shop_hive/features/mebel/presentation/controller/mebel_controller.dart';
 import 'package:mebel_shop_hive/features/mebel/presentation/ui/about_mebel.dart';
 import 'package:mebel_shop_hive/features/mebel/presentation/ui/add_mebel.dart';
 import 'package:mebel_shop_hive/features/mebel/presentation/ui/home.dart';
+import 'package:mebel_shop_hive/features/mebel/presentation/ui/selected_mebel.dart';
 import 'package:mebel_shop_hive/features/mebel/presentation/ui/update_mebel.dart';
 import 'package:mebel_shop_hive/routes/router_utils.dart';
 import 'package:provider/provider.dart';
@@ -21,6 +21,14 @@ class AppRouter {
               child: const Home(),
             ),
         routes: [
+          GoRoute(
+            path: Pages.selectedProducts.screenPath,
+            name: Pages.selectedProducts.screenName,
+            builder: (context, state) => ChangeNotifierProvider.value(
+               value: service<MebelController>(),
+               child: const SelectedMebels(),
+            ),
+          ),
           GoRoute(
               path: Pages.aboutProduct.screenPath,
               name: Pages.aboutProduct.screenName,
