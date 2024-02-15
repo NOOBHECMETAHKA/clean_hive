@@ -15,3 +15,5 @@ Future<void> init() async {
 
   await service<MebelLocalHive>().initDb();
 }
+
+
