@@ -6,5 +6,12 @@ class MebelEntity {
   final double price;
   final int count;
 
-  MebelEntity({required this.article, required this.name, required this.category, required this.description, required this.price, required this.count});
+  MebelEntity({
+    required this.article,
+    required this.name,
+    required this.category,
+    required this.description,
+    required this.price,
+    required this.count,
+  });
 }

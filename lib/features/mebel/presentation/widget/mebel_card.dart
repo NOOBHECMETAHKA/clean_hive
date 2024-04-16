@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mebel_shop_hive/features/mebel/presentation/controller/mebel_controller.dart';
 import 'package:mebel_shop_hive/routes/app_router.dart';
 import 'package:mebel_shop_hive/routes/router_utils.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MebelCard extends StatelessWidget {
   final int index;
